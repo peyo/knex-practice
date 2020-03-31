@@ -7,52 +7,50 @@ const knexInstance = knex({
 });
 
 // get items by searching text
-// const qry = (searchTerm, pageNumber, days) => {
-//   const productsPerPage = 6;
-//   const offset = productsPerPage * (pageNumber - 1);
-//   knexInstance
-//     .where('name', 'ILIKE', `%${searchTerm}%`)
-//     .from('shopping_list')
-//     .then(result => {
-//    console.log(result)
-//   })
-// }
+const qry = (searchTerm) => {
+  knexInstance
+    .where('name', 'ILIKE', `%${searchTerm}%`)
+    .from('shopping_list')
+    .then(result => {
+    console.log(result)
+   })
+}
 
-// const searchTerm = "lettuce";
-// qry(searchTerm)
+const searchTerm = "lettuce";
+qry(searchTerm)
 
 // get items by page number
-// const qry = (pageNumber) => {
-//   const productsPerPage = 6;
-//   const offset = productsPerPage * (pageNumber - 1);
-//   knexInstance
-//     .from('shopping_list')
-//     .limit(productsPerPage)
-//     .offset(offset)
-//     .then(result => {
-//       console.log(result)
-//     })
-// }
+const qry = (pageNumber) => {
+const productsPerPage = 6;
+const offset = productsPerPage * (pageNumber - 1);
+  knexInstance
+ .from('shopping_list')
+    .limit(productsPerPage)
+    .offset(offset)
+    .then(result => {
+      console.log(result)
+    })
+}
 
-// const pageNumber = 5;
-// qry(pageNumber)
+const pageNumber = 5;
+qry(pageNumber)
 
-// get all items by added after date
-// const qry = (daysAgo) => {
-//   knexInstance
-//     .from('shopping_list')
-//     .where(
-//       'date_added',
-//       '>',
-//       knexInstance.raw(`now() - '?? days'::INTERVAL`, daysAgo)
-//     )
-//     .then(result => {
-//       console.log(result)
-//     })
-// }
+// get all items by x days ago
+const qry = (daysAgo) => {
+  knexInstance
+    .from('shopping_list')
+    .where(
+      'date_added',
+      '>',
+      knexInstance.raw(`now() - '?? days'::INTERVAL`, daysAgo)
+    )
+    .then(result => {
+      console.log(result)
+    })
+}
 
-// const daysAgo = 7;
-// qry(daysAgo)
+const daysAgo = 7;
+qry(daysAgo)
 
 // get the total cost for each category
 const qry = () => {
