@@ -18,10 +18,10 @@ const knexInstance = knex({
 //   })
 // }
 
-// get items by page number
 // const searchTerm = "lettuce";
 // qry(searchTerm)
 
+// get items by page number
 // const qry = (pageNumber) => {
 //   const productsPerPage = 6;
 //   const offset = productsPerPage * (pageNumber - 1);
