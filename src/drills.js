@@ -38,21 +38,21 @@ const knexInstance = knex({
 // qry(pageNumber)
 
 // get all items by added after date
-// const qry = (days) => {
+// const qry = (daysAgo) => {
 //   knexInstance
 //     .from('shopping_list')
 //     .where(
 //       'date_added',
 //       '>',
-//       knexInstance.raw(`now() - '?? days'::INTERVAL`, days)
+//       knexInstance.raw(`now() - '?? days'::INTERVAL`, daysAgo)
 //     )
 //     .then(result => {
 //       console.log(result)
 //     })
 // }
 
-// const days = 7;
-// qry(days)
+// const daysAgo = 7;
+// qry(daysAgo)
 
 // get the total cost for each category
 const qry = () => {
