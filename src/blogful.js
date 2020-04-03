@@ -29,5 +29,3 @@ ArticlesService.getAllArticles(knexInstance)
     console.log(article)
     return ArticlesService.deleteArticle(knexInstance, article.id)
   })
-
-console.log(ArticlesService.getAllArticles())
